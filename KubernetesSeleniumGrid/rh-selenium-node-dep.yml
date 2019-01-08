@@ -1,0 +1,37 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: rh-selenium-node-chrome
+  namespace: selenium
+  labels:
+    app: rh-selenium-node-chrome
+spec:
+  replicas: 20
+  selector:
+    matchLabels:
+      app: rh-selenium-node-chrome
+  template:
+    metadata:
+      labels:
+        app: rh-selenium-node-chrome
+    spec:
+      containers:
+      - name: rh-selenium-node-chrome
+        image: selenium/node-chrome:2.53.1
+        ports:
+          - containerPort: 5900
+        env:
+          - name: HUB_PORT_4444_TCP_ADDR
+            value: "rh-selenium-hub"
+          - name: HUB_PORT_4444_TCP_PORT
+            value: "4444"
+          - name: SCREEN_WIDTH
+            value: "1920"
+          - name: SCREEN_HEIGHT
+            value: "1200"
+          - name: SCREEN_DEPTH
+            value: "24"
+        resources:
+          limits:
+            memory: "1000Mi"
+            cpu: ".5"

@@ -1,0 +1,657 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7B45E6B6-04FB-4950-8F7F-705E6D54B821}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ApplitrackUITests</RootNamespace>
+    <AssemblyName>Applitrack</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <!--<VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>-->
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA-Local|AnyCPU'">
+    <OutputPath>bin\QA-Local\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Prod-Local|AnyCPU'">
+    <OutputPath>bin\Prod-Local\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Localhost-Local|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Localhost-Local\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Prod-Grid|AnyCPU' ">
+    <OutputPath>bin\Prod-Grid\</OutputPath>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'QA-Grid|AnyCPU' ">
+    <OutputPath>bin\QA-Grid\</OutputPath>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Stage-Grid|AnyCPU' ">
+    <OutputPath>bin\Stage-Grid\</OutputPath>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Stage-Local|AnyCPU' ">
+    <OutputPath>bin\Stage-Local\</OutputPath>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Stage-Local-Jefferson|AnyCPU'">
+    <OutputPath>bin\Stage-Local-Jefferson\</OutputPath>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Stage-Grid-Jefferson|AnyCPU'">
+    <OutputPath>bin\Stage-Grid-Jefferson\</OutputPath>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'AwsQA-Local|AnyCPU'">
+    <OutputPath>bin\AwsQA-Local\</OutputPath>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'AwsQA-Grid|AnyCPU'">
+    <OutputPath>bin\AwsQA-Grid\</OutputPath>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Stage-Local-Integration|AnyCPU'">
+    <OutputPath>bin\Stage-Local-Integration\</OutputPath>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Prod-Grid-Integration|AnyCPU'">
+    <OutputPath>bin\Prod-Grid-Integration\</OutputPath>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Prod-Local-Integration|AnyCPU'">
+    <OutputPath>bin\Prod-Local-Integration\</OutputPath>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Stage-Grid-Integration|AnyCPU'">
+    <OutputPath>bin\Stage-Grid-Integration\</OutputPath>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA-Grid-Integration|AnyCPU'">
+    <OutputPath>bin\QA-Grid-Integration\</OutputPath>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA-Local-Integration|AnyCPU'">
+    <OutputPath>bin\QA-Local-Integration\</OutputPath>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Automation, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Automation.2.0.1.18\lib\Automation.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Common.Logging.3.3.1\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Common.Logging.Core.3.3.1\lib\net40\Common.Logging.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Consul, Version=0.7.2.1, Culture=neutral, PublicKeyToken=20a6ad9a81df1d95, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Consul.0.7.2.1\lib\net45\Consul.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.2\lib\net451\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="DapperExtensions, Version=1.4.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DapperExtensions.1.4.4\lib\net40\DapperExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Faker">
+      <HintPath>..\packages\Faker.1.2\lib\Faker.dll</HintPath>
+    </Reference>
+    <Reference Include="Faker.Portable, Version=2.5.0.0, Culture=neutral, PublicKeyToken=968d76e55a3a9814, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Faker.Net.Portable.2.5.0\lib\portable-net40+sl5+win8+wpa81+wp8\Faker.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="FL.IDM.PageObjects, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Frontline-IDM-PageObjects.0.1.0.541\lib\FL.IDM.PageObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="FL.QA.DataGenerator, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Frontline-QA-DataGenerator.0.1.0.10\lib\FL.QA.DataGenerator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FL.ServiceDiscovery, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Frontline-ServiceDiscovery.Consul.0.4.1.39\lib\FL.ServiceDiscovery.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FL.ServiceDiscovery.Consul, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Frontline-ServiceDiscovery.Consul.0.4.1.39\lib\FL.ServiceDiscovery.Consul.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluentAssertions, Version=4.18.0.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\FluentAssertions.4.18.0\lib\net45\FluentAssertions.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentAssertions.Core, Version=4.18.0.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\FluentAssertions.4.18.0\lib\net45\FluentAssertions.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis, Version=1.20.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Google.Apis.1.20.0\lib\net45\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth, Version=1.20.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Google.Apis.Auth.1.20.0\lib\net45\Google.Apis.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth.PlatformServices, Version=1.20.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Google.Apis.Auth.1.20.0\lib\net45\Google.Apis.Auth.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core, Version=1.20.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Google.Apis.Core.1.20.0\lib\net45\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Gmail.v1, Version=1.20.0.754, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Google.Apis.Gmail.v1.1.20.0.754\lib\net45\Google.Apis.Gmail.v1.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.PlatformServices, Version=1.20.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Google.Apis.1.20.0\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9.5\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\iTextSharp.5.5.10\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="JetBrains.Annotations, Version=11.1.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.Annotations.11.1.0\lib\net20\JetBrains.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="LazyCache, Version=0.7.1.44, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LazyCache.0.7.1.44\lib\net45\LazyCache.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.7.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\log4net.2.0.7\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Rally.RestApi, Version=3.0.1.0, Culture=neutral, PublicKeyToken=09c9d263d3ce713f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Automation.2.0.1.18\lib\Rally.RestApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Recruit.Cache.Connections, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Frontline-Recruit.Persistence.1.0.4.346\lib\Recruit.Cache.Connections.dll</HintPath>
+    </Reference>
+    <Reference Include="Recruit.Core, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Frontline-RecruitCore.0.1.0.396\lib\Recruit.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Recruit.Persistence, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Frontline-Recruit.Persistence.1.0.4.346\lib\Recruit.Persistence.dll</HintPath>
+    </Reference>
+    <Reference Include="RelevantCodes.ExtentReports, Version=1.4.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ExtentReports.2.41.0\lib\RelevantCodes.ExtentReports.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net451\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Selenium.WebDriver.Extensions, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.Extensions.2.0.0\lib\net45\Selenium.WebDriver.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Common, Version=4.5.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Common.4.5.6\lib\net45\ServiceStack.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces, Version=4.0.0.0, Culture=neutral, PublicKeyToken=e06fbc6124f57c43, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Interfaces.4.5.6\lib\portable-wp80+sl5+net45+win8+wpa81+monotouch+monoandroid+xamarin.ios10\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite, Version=4.5.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.OrmLite.4.5.6\lib\net45\ServiceStack.OrmLite.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite.SqlServer, Version=4.5.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.OrmLite.SqlServer.4.5.6\lib\net45\ServiceStack.OrmLite.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text, Version=4.5.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Text.4.5.6\lib\net45\ServiceStack.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleInjector, Version=4.0.12.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.4.0.12\lib\net45\SimpleInjector.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <!-- TEAMCITY FIX -->
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebDriver, Version=3.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.3.4.0\lib\net40\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Support, Version=3.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.3.4.0\lib\net40\WebDriver.Support.dll</HintPath>
+    </Reference>
+    <Reference Include="Zlib.Portable">
+      <HintPath>..\packages\Zlib.Portable.Signed.1.11.0\lib\portable-net4+sl5+wp8+win8+wpa81+MonoTouch+MonoAndroid\Zlib.Portable.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="DataAccess\BaseDataAccessor.cs" />
+    <Compile Include="DataAccess\FormDataAccessor.cs" />
+    <Compile Include="DataAccess\InterviewDataAccessor.cs" />
+    <Compile Include="DataAccess\JobPostingDataAccessor.cs" />
+    <Compile Include="DataAccess\NotificationDataAccessor.cs" />
+    <Compile Include="DataAccess\UserDataAccessor.cs" />
+    <Compile Include="DataAccess\WorkflowDataAccessor.cs" />
+    <Compile Include="DataGenerators\INotificationGenerator.cs" />
+    <Compile Include="DataGenerators\FormInboxNotificationGenerator.cs" />
+    <Compile Include="DataGenerators\InterviewNotificationGenerator.cs" />
+    <Compile Include="DataGenerators\JobPostingGenerator.cs" />
+    <Compile Include="DataGenerators\NotificationPopupResult.cs" />
+    <Compile Include="DataGenerators\NotificationResult.cs" />
+    <Compile Include="DataGenerators\RequisitionNotificationGenerator.cs" />
+    <Compile Include="FeatureFlags\Term.cs" />
+    <Compile Include="Helpers\CommonActions.cs" />
+    <Compile Include="Helpers\CommonWaits.cs" />
+    <Compile Include="PageObjects\AdminSide\ApplicantAdvancedSearchPage.cs" />
+    <Compile Include="PageObjects\AdminSide\Applicants\ApplicantProfileCommunicationLogPage.cs" />
+    <Compile Include="PageObjects\AdminSide\Applicants\ApplicantSearchFormPage.cs" />
+    <Compile Include="PageObjects\AdminSide\Applicants\ApplicantSearchResultsPage.cs" />
+    <Compile Include="PageObjects\AdminSide\DashboardPage.cs" />
+    <Compile Include="PageObjects\AdminSide\EmployeeAdvancedSearchPage.cs" />
+    <Compile Include="PageObjects\AdminSide\Employees\EmployeeAdminDashboardPage.cs" />
+    <Compile Include="PageObjects\AdminSide\Forms\MySentFormsPage.cs" />
+    <Compile Include="PageObjects\AdminSide\IdmAccountSettingsPage.cs" />
+    <Compile Include="PageObjects\AdminSide\IdmLogoutPage.cs" />
+    <Compile Include="PageObjects\AdminSide\Interviews\InterviewsDashboardPage.cs" />
+    <Compile Include="PageObjects\AdminSide\JobPostings\JobPostingsDashboardPage.cs" />
+    <Compile Include="PageObjects\AdminSide\MarketPlacePage.cs" />
+    <Compile Include="PageObjects\AdminSide\Users\CreateNewUserPage.cs" />
+    <Compile Include="PageObjects\AdminSide\Users\ListUsersPage.cs" />
+    <Compile Include="PageObjects\AdminSide\Users\ManageUserAccessPage.cs" />
+    <Compile Include="PageObjects\AdminSide\Users\UserPages.cs" />
+    <Compile Include="TestBaseCases\MainScreenBaseTests.cs" />
+    <Compile Include="TestCases\ApplicationAccessTests\ApplicationAccessSmokeTests.cs" />
+    <Compile Include="PageObjects\AdminSide\Menu\SuperSuitNavigation.cs" />
+    <Compile Include="TestCases\MainScreenTests\MainScreenRegressionTests.cs" />
+    <Compile Include="TestCases\LeftHandNavTests\LeftHandNavSmokeTests.cs" />
+    <Compile Include="TestCases\UserSorTests\UserSorSmokeTests.cs" />
+    <Compile Include="WorkFlows\ApplicantWorkflows.cs" />
+    <Compile Include="DataGenerators\AddressGenerator.cs" />
+    <Compile Include="DataGenerators\ApplicantGenerator.cs" />
+    <Compile Include="DataGenerators\ApplicationPageData.cs" />
+    <Compile Include="DataGenerators\EmployeeData.cs" />
+    <Compile Include="DataGenerators\IdmLoginData.cs" />
+    <Compile Include="DataGenerators\JeffersonLoginData.cs" />
+    <Compile Include="DataGenerators\JobData.cs" />
+    <Compile Include="DataGenerators\InterviewData.cs" />
+    <Compile Include="DataGenerators\FormData.cs" />
+    <Compile Include="DataGenerators\LoginData.cs" />
+    <Compile Include="DataGenerators\PersonGenerator.cs" />
+    <Compile Include="DataGenerators\StandardLoginData.cs" />
+    <Compile Include="DataGenerators\UserGenerator.cs" />
+    <Compile Include="DataModels\IAddress.cs" />
+    <Compile Include="DataModels\IApplicant.cs" />
+    <Compile Include="DataModels\IPerson.cs" />
+    <Compile Include="DataModels\IUser.cs" />
+    <Compile Include="DataModels\UserType.cs" />
+    <Compile Include="FeatureFlags\Employees.cs" />
+    <Compile Include="FeatureFlags\PersonalInfo.cs" />
+    <Compile Include="FeatureFlags\ThirdParty.cs" />
+    <Compile Include="Helpers\ApiHelpers.cs" />
+    <Compile Include="Helpers\EnvironmentTypes.cs" />
+    <Compile Include="Helpers\Gmail.cs" />
+    <Compile Include="Helpers\GmailApi.cs" />
+    <Compile Include="Helpers\ImageHelpers.cs" />
+    <Compile Include="Helpers\LinkHelpers.cs" />
+    <Compile Include="Helpers\PdfHelpers.cs" />
+    <Compile Include="Helpers\ScrollTable.cs" />
+    <Compile Include="Helpers\SeleniumExtensions.cs" />
+    <Compile Include="Helpers\WindowHelpers.cs" />
+    <Compile Include="PageObjects\AdminSide\Applicants\ApplicantAdminPages.cs" />
+    <Compile Include="PageObjects\AdminSide\Applicants\ApplicantAdminDashboardPage.cs" />
+    <Compile Include="PageObjects\AdminSide\Applicants\ApplicantAdminVacanciesByCategoryPages.cs" />
+    <Compile Include="PageObjects\AdminSide\Applicants\ApplicantNotesPages.cs" />
+    <Compile Include="PageObjects\AdminSide\Applicants\ApplicantNotesTab.cs" />
+    <Compile Include="PageObjects\AdminSide\Applicants\ApplicantProfileInterviewsPage.cs" />
+    <Compile Include="PageObjects\AdminSide\Applicants\ApplicantProfileListAllFormsPage.cs" />
+    <Compile Include="PageObjects\AdminSide\Applicants\ApplicantProfileOnlineApplicationPage.cs" />
+    <Compile Include="PageObjects\AdminSide\Applicants\ApplicantProfilePages.cs" />
+    <Compile Include="PageObjects\AdminSide\Applicants\ApplicantProfileQuickLookPage.cs" />
+    <Compile Include="PageObjects\AdminSide\Applicants\ApplicantProfileReferencesPage.cs" />
+    <Compile Include="PageObjects\AdminSide\Applicants\ApplicantProfileToolbar.cs" />
+    <Compile Include="PageObjects\AdminSide\Applicants\HireWizard\ConfirmationPage.cs" />
+    <Compile Include="PageObjects\AdminSide\Applicants\HireWizard\FCEmployeeInfoPage.cs" />
+    <Compile Include="PageObjects\AdminSide\Applicants\HireWizard\FinishedPage.cs" />
+    <Compile Include="PageObjects\AdminSide\Applicants\HireWizard\HireWizardPage.cs" />
+    <Compile Include="PageObjects\AdminSide\AppSelectorPage.cs" />
+    <Compile Include="PageObjects\AdminSide\CommonPages\EmailPage.cs" />
+    <Compile Include="PageObjects\AdminSide\Forms\CreateNewFormPage.cs" />
+    <Compile Include="PageObjects\AdminSide\Forms\EditAndCreateFormPage.cs" />
+    <Compile Include="PageObjects\AdminSide\Forms\EditAndCreateFormAppearanceTab.cs" />
+    <Compile Include="PageObjects\AdminSide\Forms\EditAndCreateFormFormContentTab.cs" />
+    <Compile Include="PageObjects\AdminSide\Forms\EditAndCreateFormPermissionsTab.cs" />
+    <Compile Include="PageObjects\AdminSide\Forms\EditAndCreateFormPropertiesTab.cs" />
+    <Compile Include="PageObjects\AdminSide\Forms\EditAndCreateFormWorkflowTab.cs" />
+    <Compile Include="PageObjects\AdminSide\Forms\EditFormsPage.cs" />
+    <Compile Include="PageObjects\AdminSide\Forms\FormsSearchPage.cs" />
+    <Compile Include="PageObjects\AdminSide\Forms\SendFormPage.cs" />
+    <Compile Include="PageObjects\AdminSide\Interviews\CreateInterviewPages.cs" />
+    <Compile Include="PageObjects\AdminSide\Interviews\CreateInterviewParticipantsTab.cs" />
+    <Compile Include="PageObjects\AdminSide\Interviews\CreateInterviewQuestionnairesTab.cs" />
+    <Compile Include="PageObjects\AdminSide\Interviews\CreateInterviewSeriesDetailsTab.cs" />
+    <Compile Include="PageObjects\AdminSide\Interviews\CreateInterviewSessionsTab.cs" />
+    <Compile Include="PageObjects\AdminSide\Interviews\CreateInterviewStartTab.cs" />
+    <Compile Include="PageObjects\AdminSide\Interviews\CreateInterviewSummaryTab.cs" />
+    <Compile Include="PageObjects\AdminSide\Interviews\InterviewPages.cs" />
+    <Compile Include="PageObjects\AdminSide\Interviews\MyInterviewsPage.cs" />
+    <Compile Include="PageObjects\AdminSide\JobPostings\AllPostingsByStatusPage.cs" />
+    <Compile Include="PageObjects\AdminSide\JobPostings\CreateNewPostingPage.cs" />
+    <Compile Include="PageObjects\AdminSide\JobPostings\CreateNewRequisitionPage.cs" />
+    <Compile Include="PageObjects\AdminSide\JobPostings\EditCreatePostingFormsTab.cs" />
+    <Compile Include="PageObjects\AdminSide\JobPostings\EditCreatePostingMainTab.cs" />
+    <Compile Include="PageObjects\AdminSide\JobPostings\EditCreatePostingPage.cs" />
+    <Compile Include="PageObjects\AdminSide\JobPostings\EditCreatePostingPerPostingQuestionsTab.cs" />
+    <Compile Include="PageObjects\AdminSide\JobPostings\EditCreatePostingPostingToolsTab.cs" />
+    <Compile Include="PageObjects\AdminSide\JobPostings\EditCreatePostingsAdvertiseTab.cs" />
+    <Compile Include="PageObjects\AdminSide\JobPostings\EditCreateRequisitionApprovalProcessTab.cs" />
+    <Compile Include="PageObjects\AdminSide\JobPostings\EditCreateRequisitionPage.cs" />
+    <Compile Include="PageObjects\AdminSide\JobPostings\EditCreatePostingAssignedApplicationsTab.cs" />
+    <Compile Include="PageObjects\AdminSide\JobPostings\EditCreatePostingDescriptionTab.cs" />
+    <Compile Include="PageObjects\AdminSide\JobPostings\ListAllActivePostingsPage.cs" />
+    <Compile Include="PageObjects\AdminSide\JobPostings\ListExistingTemplatePage.cs" />
+    <Compile Include="PageObjects\AdminSide\JobPostings\MyDraftRequisitionsPage.cs" />
+    <Compile Include="PageObjects\AdminSide\JobPostings\MyUnsubmittedRequisitionPage.cs" />
+    <Compile Include="PageObjects\AdminSide\JobPostings\PostingsByCategoryPages.cs" />
+    <Compile Include="PageObjects\AdminSide\Menu\SubMenuMyAccount.cs" />
+    <Compile Include="PageObjects\AdminSide\Menu\SubMenuSetup.cs" />
+    <Compile Include="PageObjects\AdminSide\MyAccount\MyAccountPages.cs" />
+    <Compile Include="PageObjects\AdminSide\MyAccount\UserPreferencesPage.cs" />
+    <Compile Include="PageObjects\AdminSide\Setup\ApplicantSettingsEditPage.cs" />
+    <Compile Include="PageObjects\AdminSide\Setup\ApplicantSettingsManageInternalPages.cs" />
+    <Compile Include="PageObjects\AdminSide\Setup\ApplicantSettingsPages.cs" />
+    <Compile Include="PageObjects\AdminSide\Setup\EditPositionListPages.cs" />
+    <Compile Include="PageObjects\AdminSide\Setup\EditPositionWindow.cs" />
+    <Compile Include="PageObjects\AdminSide\Setup\SetupPages.cs" />
+    <Compile Include="PageObjects\AdminSide\StrongeInstallPage.cs" />
+    <Compile Include="PageObjects\AdminSide\Users\ApplicationAccessPage.cs" />
+    <Compile Include="PageObjects\ApplicantSide\EmploymentApplication\ConfirmationPage.cs" />
+    <Compile Include="PageObjects\ApplicantSide\EmploymentApplication\EmploymentApplicationPages.cs" />
+    <Compile Include="PageObjects\ApplicantSide\EmploymentApplication\PersonalInfoPage.cs" />
+    <Compile Include="PageObjects\ApplicantSide\EmploymentApplication\PostalAddressPage.cs" />
+    <Compile Include="PageObjects\ApplicantSide\EmploymentApplication\VacancyDesiredPage.cs" />
+    <Compile Include="PageObjects\ApplicantSide\FitPages.cs" />
+    <Compile Include="PageObjects\ApplicantSide\JobPostingPage.cs" />
+    <Compile Include="PageObjects\ApplitrackUIBase.cs" />
+    <Compile Include="PageObjects\EmployeeCenter\EmployeeCenterMainPage.cs" />
+    <Compile Include="PageObjects\Jefferson\ExternalOrgLogoutPage.cs" />
+    <Compile Include="PageObjects\Jefferson\FederatedLoginPage.cs" />
+    <Compile Include="PageObjects\PageTypes\IAppitrackPage.cs" />
+    <Compile Include="PageObjects\PageTypes\ScrollTableType.cs" />
+    <Compile Include="PageObjects\Toolbar\SidekickHelpMenuPage.cs" />
+    <Compile Include="PageObjects\Toolbar\SidekickInboxPage.cs" />
+    <Compile Include="PageObjects\Toolbar\SidekickSearchPage.cs" />
+    <Compile Include="PageObjects\Toolbar\ApplitrackToolbar.cs" />
+    <Compile Include="PageObjects\AdminSide\Forms\FormPages.cs" />
+    <Compile Include="PageObjects\EmployeeSide\EmployeePortalLoginPage.cs" />
+    <Compile Include="PageObjects\EmployeeSide\EmployeePortalPages.cs" />
+    <Compile Include="PageObjects\EmployeeSide\EmployeePortalFormsTab.cs" />
+    <Compile Include="PageObjects\ApplicantSide\DefaultLandingPage.cs" />
+    <Compile Include="PageObjects\ApplicantSide\EmploymentApplication\ApplicantPages.cs" />
+    <Compile Include="PageObjects\AdminSide\JobPostings\JobPostingsPages.cs" />
+    <Compile Include="PageObjects\AdminSide\Menu\ApplicantAdminMenu.cs" />
+    <Compile Include="PageObjects\AdminSide\Menu\SubMenuJobPostings.cs" />
+    <Compile Include="PageObjects\AdminSide\Menu\MainMenu.cs" />
+    <Compile Include="PageObjects\AdminSide\Menu\SubMenuApplicants.cs" />
+    <Compile Include="PageObjects\AdminSide\Menu\SubMenuInterviews.cs" />
+    <Compile Include="PageObjects\AdminSide\Menu\SubMenuUsers.cs" />
+    <Compile Include="PageObjects\AdminSide\Menu\SubMenuEmployees.cs" />
+    <Compile Include="PageObjects\AdminSide\Menu\SubMenuForms.cs" />
+    <Compile Include="PageObjects\Toolbar\ApplitrackHelpMenuPage.cs" />
+    <Compile Include="PageObjects\Toolbar\ApplitrackInboxPage.cs" />
+    <Compile Include="PageObjects\Toolbar\ApplitrackNewsFeedPage.cs" />
+    <Compile Include="PageObjects\Toolbar\ApplitrackSearchPage.cs" />
+    <Compile Include="PageObjects\Toolbar\SidekickUserMenuPage.cs" />
+    <Compile Include="PageObjects\Toolbar\SidekickToolbar.cs" />
+    <Compile Include="PageObjects\Toolbar\Toolbar.cs" />
+    <Compile Include="PageObjects\Toolbar\ToolbarFactory.cs" />
+    <Compile Include="PageObjects\Toolbar\ApplitrackUserMenuPage.cs" />
+    <Compile Include="PageObjects\ExtentBase.cs" />
+    <Compile Include="PageObjects\AdminSide\LoginPage.cs" />
+    <Compile Include="PageObjects\Toolbar\ToolbarHelpMenuPage.cs" />
+    <Compile Include="PageObjects\Toolbar\ToolbarInboxPage.cs" />
+    <Compile Include="PageObjects\Toolbar\ToolbarSearchPage.cs" />
+    <Compile Include="PageObjects\Toolbar\ToolbarUserMenuPage.cs" />
+    <Compile Include="TestCases\ApplicantTests\ApplicantRegressionTests.cs" />
+    <Compile Include="TestCases\ApplicantTests\ApplicantSmokeTests.cs" />
+    <Compile Include="TestCases\EmployeePortalTests\EmployeePortalRegressionTests.cs" />
+    <Compile Include="TestCases\EmployeePortalTests\EmployeePortalSmokeTests.cs" />
+    <Compile Include="TestCases\EmployeeTests\EmployeeSmokeTests.cs" />
+    <Compile Include="TestCases\FCIntegrationTests\FCIntegrationSmokeTests.cs" />
+    <Compile Include="TestCases\FormTests\FormRegressionTests.cs" />
+    <Compile Include="TestCases\JeffersonTests\JeffersonSmokeTests.cs" />
+    <Compile Include="TestCases\JobTests\JobRegressionTests.cs" />
+    <Compile Include="TestCases\LandingPageTests\LandingPageSmokeTests.cs" />
+    <Compile Include="TestCases\FormTests\FormSmokeTests.cs" />
+    <Compile Include="TestCases\JobTests\JobSmokeTests.cs" />
+    <Compile Include="TestCases\LoginTests\LoginSmokeTests.cs" />
+    <Compile Include="TestCases\MyAccountTests\UserPreferencesRegressionTests.cs" />
+    <Compile Include="TestCases\Performance\PositionListTests.cs" />
+    <Compile Include="TestCases\PermissionTests\PermissionRegressionTests.cs" />
+    <Compile Include="TestCases\PreSmokeTests\HealthCheckTests.cs" />
+    <Compile Include="TestCases\SearchTests\SearchSmokeTests.cs" />
+    <Compile Include="TestCases\MarketPlaceTests\MarketPlaceSmokeTests.cs" />
+    <Compile Include="TestCases\ProjectManagerTests\ProjectManagerSmokeTests.cs" />
+    <Compile Include="TestCases\MainScreenTests\MainScreenSmokeTests.cs" />
+    <Compile Include="TestCases\SetupTests\SetupRegressionTests.cs" />
+    <Compile Include="TestCases\SHPTests\SHPSmokeTests.cs" />
+    <Compile Include="TestCases\TeacherFitTests\TeacherFitRegressionTests.cs" />
+    <Compile Include="TestCases\TeacherFitTests\TeacherFitSmokeTests.cs" />
+    <Compile Include="TestCases\UserTests\UserSmokeTests.cs" />
+    <Compile Include="TestCases\InterviewTests\InterviewSmokeTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Helpers\TestEnvironment.cs" />
+    <Compile Include="WorkFlows\ApplicationWorkflows.cs" />
+    <Compile Include="WorkFlows\LoginWorkflows.cs" />
+    <Compile Include="WorkFlows\SearchWorkflows.cs" />
+    <Compile Include="WorkFlows\InterviewWorkflows.cs" />
+    <Compile Include="WorkFlows\FormWorkflows.cs" />
+    <Compile Include="WorkFlows\JobPostingWorkflows.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.AwsQA-Grid.config">
+      <DependentUpon>App.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App.AwsQA-Local.config">
+      <DependentUpon>App.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App.config">
+      <TransformOnBuild>true</TransformOnBuild>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="App.Localhost-Local.config">
+      <DependentUpon>App.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App.Prod-Grid-Integration.config">
+      <DependentUpon>App.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App.Prod-Grid.config">
+      <DependentUpon>App.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App.Prod-Local-Integration.config">
+      <DependentUpon>App.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App.Prod-Local.config">
+      <DependentUpon>App.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="App.QA-Grid-Integration.config">
+      <DependentUpon>App.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App.QA-Grid.config">
+      <DependentUpon>App.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App.QA-Local-Integration.config">
+      <DependentUpon>App.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App.QA-Local.config">
+      <DependentUpon>App.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App.Stage-Grid-Integration.config">
+      <DependentUpon>App.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App.Stage-Grid-Jefferson.config">
+      <DependentUpon>App.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App.Stage-Grid.config">
+      <DependentUpon>App.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App.Stage-Local-Integration.config">
+      <DependentUpon>App.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App.Stage-Local-Jefferson.config">
+      <DependentUpon>App.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App.Stage-Local.config">
+      <DependentUpon>App.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="DataFiles\CrossBrowser2.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <!--<None Include="Properties\SlowCheetah\SlowCheetah.Transforms.targets" />-->
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <!--<Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />-->
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <!--<UsingTask TaskName="TransformXml" AssemblyFile="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Web\Microsoft.Web.Publishing.Tasks.dll" />
+  <Target Name="AfterCompile" Condition="Exists('App.$(Configuration).config')">-->
+  <!--Generate transformed app config in the intermediate directory-->
+  <!--<TransformXml Source="App.config" Destination="$(IntermediateOutputPath)$(TargetFileName).config" Transform="App.$(Configuration).config" />-->
+  <!--Force build process to use the transformed configuration file from now on.-->
+  <!--<ItemGroup>
+      <AppConfigWithTargetPath Remove="App.config" />
+      <AppConfigWithTargetPath Include="$(IntermediateOutputPath)$(TargetFileName).config">
+        <TargetPath>$(TargetFileName).config</TargetPath>
+      </AppConfigWithTargetPath>
+    </ItemGroup>
+  </Target>-->
+  <!--Override After Publish to support ClickOnce AfterPublish. Target replaces the untransformed config file copied to the deployment directory with the transformed one.-->
+  <Target Name="AfterPublish">
+    <PropertyGroup>
+      <DeployedConfig>$(_DeploymentApplicationDir)$(TargetName)$(TargetExt).config$(_DeploymentFileMappingExtension)</DeployedConfig>
+    </PropertyGroup>
+    <!--Publish copies the untransformed App.config to deployment directory so overwrite it-->
+    <Copy Condition="Exists('$(DeployedConfig)')" SourceFiles="$(IntermediateOutputPath)$(TargetFileName).config" DestinationFiles="$(DeployedConfig)" />
+  </Target>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.VisualStudio.SlowCheetah.3.0.61\build\Microsoft.VisualStudio.SlowCheetah.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.VisualStudio.SlowCheetah.3.0.61\build\Microsoft.VisualStudio.SlowCheetah.targets'))" />
+    <Error Condition="!Exists('..\packages\Selenium.WebDriver.ChromeDriver.2.37.0\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.ChromeDriver.2.37.0\build\Selenium.WebDriver.ChromeDriver.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.VisualStudio.SlowCheetah.3.0.61\build\Microsoft.VisualStudio.SlowCheetah.targets" Condition="Exists('..\packages\Microsoft.VisualStudio.SlowCheetah.3.0.61\build\Microsoft.VisualStudio.SlowCheetah.targets')" />
+  <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.2.37.0\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.2.37.0\build\Selenium.WebDriver.ChromeDriver.targets')" />
+</Project>

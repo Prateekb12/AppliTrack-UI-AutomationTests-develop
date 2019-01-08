@@ -1,0 +1,28 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: rh-idmrecruitlogin
+  namespace: selenium
+  labels:
+    app: rh-idmrecruitlogin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rh-idmrecruitlogin
+  template:
+    metadata:
+      labels:
+        app: rh-idmrecruitlogin
+    spec:
+      imagePullSecrets:
+        - name: quay
+      containers:
+      - name: rh-idmrecruitlogin
+        image: quay.io/frontline/util-idmrecruitloginapi
+        ports:
+          - containerPort: 3000        
+        resources:
+          limits:
+            memory: "1000Mi"
+            cpu: ".5"
